@@ -7,11 +7,16 @@ form.addEventListener('submit', function(e) {
     var pass2 = document.getElementById('m2').value;
     var pass1 = pass2.split("");
     var num = 0;
-    for (var i = 0;i < pass.length;i++) {
-      var hi = pass[i];
+    for (var r = 0;r < pass.length;r++) {
+      var hi = pass[r];
       for (var i = 0;i < symbols.length;i++) {
         if (symbols[i] == hi) {
-          num += i;
+          if (r == 0) {
+            num += i;
+          }
+          else {
+            num += (symbols[i] * 36);
+          }
         }
       }
     }
